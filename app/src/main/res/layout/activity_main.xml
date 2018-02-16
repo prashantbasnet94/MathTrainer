@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.prashant.mathbraingame.MainActivity">
+
+
+    <Button
+        android:id="@+id/go"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="141dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="26dp"
+        android:background="@android:color/holo_green_dark"
+        android:onClick="start"
+        android:text="GO"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gridLayout"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/contains"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="321dp"
+            android:layout_height="262dp"
+            android:layout_marginBottom="105dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginStart="32dp"
+            android:columnCount="2"
+            android:rowCount="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+
+            >
+
+            <Button
+                android:id="@+id/first"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:layout_rowWeight="1"
+                android:background="?attr/colorPrimary"
+                android:gravity="fill"
+
+
+                android:onClick="chooseAnswer"
+                android:padding="5dp"
+                android:tag="0"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+            <Button
+                android:id="@+id/second"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:layout_rowWeight="1"
+                android:background="@android:color/holo_blue_dark"
+                android:gravity="fill"
+
+                android:onClick="chooseAnswer"
+                android:padding="3dp"
+                android:tag="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+            <Button
+                android:id="@+id/third"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:layout_rowWeight="1"
+                android:background="@android:color/holo_green_light"
+                android:gravity="fill"
+
+                android:onClick="chooseAnswer"
+                android:padding="5dp"
+                android:tag="2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+            <Button
+                android:id="@+id/fourth"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:layout_rowWeight="1"
+                android:background="@android:color/holo_red_light"
+                android:gravity="fill"
+
+                android:onClick="chooseAnswer"
+                android:padding="3dp"
+                android:tag="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="457dp"
+            android:layout_marginEnd="82dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/colorPrimary"
+
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/solved"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/playAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="45dp"
+            android:layout_marginEnd="87dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="12dp"
+
+            android:onClick="playAgain"
+            android:text="play Again"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/answerText"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+        <TextView
+            android:id="@+id/questionTextView"
+            android:layout_width="194dp"
+            android:layout_height="74dp"
+            android:layout_marginEnd="98dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time" />
+
+        <Button
+            android:id="@+id/solved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="80dp"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/colorAccent"
+            android:text="20/20"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/time"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/answerText"
+            android:layout_width="147dp"
+            android:layout_height="106dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginStart="48dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/playAgain"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
